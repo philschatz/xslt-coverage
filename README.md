@@ -22,4 +22,4 @@ node mergeCoverageFiles.js cov1.json cov2.json cov3.json ... > coverage/coverage
 1. Open [./cnxml-to-html5.xsl](./cnxml-to-html5.xsl) in the editor and see the code coverage
 
 
-![xslt coverage](https://user-images.githubusercontent.com/253202/76580187-0a14cd80-649d-11ea-9681-4b13688c7fa8.png)
+![xslt coverage](https://user-images.githubusercontent.com/253202/76597517-a73c2a00-64ce-11ea-9a86-9898cac674ec.png)
