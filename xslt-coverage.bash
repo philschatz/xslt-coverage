@@ -35,6 +35,10 @@ xslt_coverage() {
 
   [[ ${output_file} != '' ]] && optional_output="-o:${output_file}"
 
+  case $xsl_file in .*)
+      die "Unfortunately, beginning the XSLT file path with a period is not supported. The code coverage lookup seems to silently fail in that case. Just remove the period"
+  esac
+
   java \
     -Dxspec.coverage.ignore="${COVERAGE_IGNORE}" \
     -Dxspec.coverage.xml="${temp_coverage_xml}" \
