@@ -17,4 +17,4 @@ script: ./test.bash
 
 after_script:
   # Report coverage to codecov
-  - bash <(curl -s https://codecov.io/bash) -v -Z
+  - bash <(curl -s https://codecov.io/bash) -Z

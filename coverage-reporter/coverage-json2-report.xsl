@@ -141,7 +141,7 @@ Templates containing "j:" and "coverage:" are modified.
                 </j:map>
                 <j:map key="end">
                   <j:number key="line">{$l}</j:number>
-                  <j:number key="column">999</j:number>
+                  <j:number key="column">{@length}</j:number>
                 </j:map>
               </j:map>
             </xsl:otherwise>
@@ -262,7 +262,7 @@ Templates containing "j:" and "coverage:" are modified.
         <xsl:variable name="coverage" as="xs:string" 
           select="if ($matches) then test:coverage($node, $module) else 'ignored'" />
         <xsl:for-each select="$construct-lines">
-          <coverage:line-info line="{$line-number + position()}" status="{$coverage}" />
+          <coverage:line-info line="{$line-number + position()}" length="{string-length(.)}" status="{$coverage}" />
         </xsl:for-each>
         <!-- Capture the residue, tagging it for later analysis and processing. -->
         <test:residue matches="{$matches}" startTag="{$startTag}" rest="{$rest}" count="{count($construct-lines)}" />
