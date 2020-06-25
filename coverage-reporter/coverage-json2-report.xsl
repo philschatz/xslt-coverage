@@ -157,7 +157,7 @@ Templates containing "j:" and "coverage:" are modified.
           <xsl:choose>
             <xsl:when test="$status = 'ignored'" />
             <xsl:when test="$status = 'hit'">
-              <j:number key="{$id}">12345</j:number>
+              <j:number key="{$id}">1</j:number>
             </xsl:when>
             <xsl:when test="$status = 'missed'">
               <j:number key="{$id}">0</j:number>
