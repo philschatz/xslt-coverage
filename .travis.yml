@@ -1,0 +1,20 @@
+os: linux
+language: java
+
+jdk: openjdk11
+
+before_script:
+  # install XSpec
+  - export XSPEC_HOME=/tmp/xspec
+  - git clone -b master https://github.com/xspec/xspec.git ${XSPEC_HOME}
+  # install Saxon
+  - export SAXON_HOME=/tmp/xspec/saxon/
+  - export SAXON_CP=/tmp/xspec/saxon/saxon9he.jar
+  - mkdir -p ${SAXON_HOME}
+  - wget -O ${SAXON_CP} https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-7/Saxon-HE-9.9.1-7.jar
+
+script: ./test.bash
+
+after_script:
+  # Report coverage to codecov
+  - bash <(curl -s https://codecov.io/bash) -v -Z
